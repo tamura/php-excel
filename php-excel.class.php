@@ -257,6 +257,8 @@ class Excel_XML
                         endif;
                 endif;
                 $item = str_replace('&#039;', '&apos;', htmlspecialchars($item, ENT_QUOTES));
+                $item = str_replace("\n", '&#10;',$item ) ;
+
                 $this->sOutput .= sprintf("            <Cell><Data ss:Type=\"%s\">%s</Data></Cell>\n", $type, $item);
         }
 
